@@ -121,9 +121,6 @@ const client = new Client({
             '--no-zygote',
             '--disable-gpu'
         ],
-        executablePath: process.platform === 'win32'
-            ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
-            : '/usr/bin/google-chrome-stable'
     }
 });
 
