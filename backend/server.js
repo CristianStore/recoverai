@@ -146,14 +146,15 @@ const applyBranding = async () => {
     }, 5000);
 };
 
-console.log('--- QR CODE EVENT RECEIVED ---');
-console.log('QR String Length:', qr.length);
+client.on('qr', (qr) => {
+    console.log('--- QR CODE EVENT RECEIVED ---');
+    console.log('QR String Length:', qr.length);
 
-qrcode.generate(qr, { small: true });
-waStatus = 'scanned_needed';
+    qrcode.generate(qr, { small: true });
+    waStatus = 'scanned_needed';
 
-// Store QR globally for API access
-global.latestQr = qr;
+    // Store QR globally for API access
+    global.latestQr = qr;
 });
 
 // Add QR Image Endpoint
