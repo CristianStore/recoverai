@@ -372,13 +372,16 @@ app.post('/api/test-recovery-custom', async (req, res) => {
             .replace('{{link}}', baseUrl);
         const numberId = await client.getNumberId(phone);
 
-        if (numberId) {
-            await client.sendMessage(numberId._serialized, msg);
-            res.json({ success: true });
-        } else {
-            res.status(404).json({ error: 'Número no válido' });
-        }
-    } catch (e) { res.status(500).json({ error: e.message }); }
+        // Try to obtain serialized ID, fallback to direct appending if failed
+        const chatId = numberId ? numberId._serialized : `${phone.replace(/\+/g, '')}@c.us`;
+
+        await client.sendMessage(chatId, msg);
+        res.json({ success: true, debug_chatId: chatId });
+
+    } catch (e) {
+        console.error('Error sending test message:', e);
+        res.status(500).json({ error: e.message });
+    }
 });
 
 // --- Dashboard & Stats ---
