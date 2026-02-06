@@ -179,7 +179,10 @@ const Dashboard = () => {
                     <h2 className="text-2xl font-bold text-white text-center mb-6">RecoverAI Admin</h2>
                     <form onSubmit={(e) => {
                         e.preventDefault();
-                        if (passwordInput === 'Pr5refux') {
+                        // Get password from Vercel Environment or use Master Default
+                        const masterKey = import.meta.env.VITE_ADMIN_PASSWORD || 'Pr5refux';
+
+                        if (passwordInput === masterKey) {
                             setIsAuthenticated(true);
                         } else {
                             alert('Contraseña Incorrecta');
