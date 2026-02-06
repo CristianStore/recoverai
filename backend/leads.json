@@ -1,0 +1,21 @@
+{
+  "potentialLeads": [
+    {
+      "name": "Cristian (Propietario)",
+      "phone": "573228516001",
+      "status": "contacted",
+      "contactedAt": "2026-02-05T00:55:40.001Z"
+    },
+    {
+      "name": "luzzz ma",
+      "phone": "573172922575",
+      "status": "contacted",
+      "contactedAt": "2026-02-05T00:57:20.004Z"
+    }
+  ],
+  "outreachStats": {
+    "totalSent": 3,
+    "repliesReceived": 0,
+    "active": true
+  }
+}

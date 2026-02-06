@@ -1,0 +1,24 @@
+{
+    "sales": {
+        "es": [
+            "¡Hola {{name}}! 👋 ¿Sabía que las tiendas pierden el 70% de sus ventas por carritos abandonados? En RecoverAI hemos desarrollado una IA que recupera ese dinero. 📈 Vea cómo activarlo aquí: {{link}}",
+            "Saludos {{name}}. 🤖 Nuestra misión es que no pierda ventas. Nuestra tecnología detecta carritos desatendidos y reactiva el interés de sus clientes. 💎 Sume un 20% extra hoy: {{link}}",
+            "Hola {{name}}, ¿le gustaría automatizar sus ventas por WhatsApp? 🚀 RecoverAI contacta a sus clientes cuando abandonan la compra. Pruébelo ahora: {{link}}"
+        ],
+        "pt": [
+            "Olá {{name}}! 👋 Sabia que as lojas perdem 70% das vendas por carrinhos abandonados? A RecoverAI recupera esse dinheiro automaticamente. 📈 Veja como ativar: {{link}}",
+            "Oi {{name}}! 🤖 Aumente suas vendas com Inteligência Artificial. O RecoverAI recupera clientes que desistiram da compra. 💎 Teste agora: {{link}}",
+            "Olá {{name}}, automatize suas vendas no WhatsApp! 🚀 Nossa IA converte carrinhos abandonados em lucro. Comece hoje: {{link}}"
+        ],
+        "en": [
+            "Hello {{name}}! 👋 Did you know stores lose 70% of sales due to abandoned carts? RecoverAI is an AI tool that recovers that revenue for you automatically via WhatsApp. 📈 Check it out here: {{link}}",
+            "Hi {{name}}, boost your sales with RecoverAI! 🚀 We are the strategic ally for top e-commerce stores. Our AI ensures every customer returns to complete their purchase. 💰 Start your Premium trial now: {{link}}",
+            "Hey {{name}}! 🤖 Want to recover lost sales automatically? RecoverAI contacts your abandoned carts instantly. Try it explicitly here: {{link}}"
+        ]
+    },
+    "recovery": {
+        "es": "Hola {{name}}, notamos que dejaste items en tu carrito 🛒. Recupéralos aquí: {{link}}",
+        "pt": "Olá {{name}}, notamos que você deixou itens no carrinho 🛒. Recupere aqui: {{link}}",
+        "en": "Hi {{name}}, we noticed you left items in your cart 🛒. Recover them here: {{link}}"
+    }
+}

@@ -1,0 +1,102 @@
+{
+  "shops": {
+    "CRISTIAN_DEV_KEY": {
+      "name": "Tienda Demo (Cristian)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_ZLVDERPJ": {
+      "name": "Tienda Nueva (SHOP_ZLVDERPJ)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_DAI4FWDQ": {
+      "name": "Tienda Nueva (SHOP_DAI4FWDQ)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_ATGGV8Z5": {
+      "name": "Tienda Nueva (SHOP_ATGGV8Z5)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_3L8FBBFW": {
+      "name": "Tienda Nueva (SHOP_3L8FBBFW)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_5XXC0183": {
+      "name": "Tienda Nueva (SHOP_5XXC0183)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_H4MV7LHA": {
+      "name": "Tienda Nueva (SHOP_H4MV7LHA)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_XA0HX4JL": {
+      "name": "Tienda Nueva (SHOP_XA0HX4JL)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_LQ7OZVEO": {
+      "name": "Tienda Nueva (SHOP_LQ7OZVEO)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_MGMR6L5N": {
+      "name": "Tienda Nueva (SHOP_MGMR6L5N)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_4AVU7XU0": {
+      "name": "Tienda Nueva (SHOP_4AVU7XU0)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_WPD7H18A": {
+      "name": "Tienda Nueva (SHOP_WPD7H18A)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_O6VIGBUI": {
+      "name": "Tienda Nueva (SHOP_O6VIGBUI)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    },
+    "SHOP_JNPU2XRTQ": {
+      "name": "Nueva Tienda (Pro)",
+      "earnings": 0,
+      "messagesSent": 0,
+      "cartsDetected": 0,
+      "events": []
+    }
+  }
+}

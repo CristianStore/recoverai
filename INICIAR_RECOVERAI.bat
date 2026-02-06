@@ -1,0 +1,6 @@
+@echo off
+:: Lanzador Magico - Inicia todo en modo oculto
+echo Iniciando RecoverAI Pro...
+echo Configurando servidores y tuneles...
+wscript.exe d:\RecoverAI\SILENT_LAUNCH.vbs
+exit

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecoverAI | Recupera tus ventas en Piloto Automático</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- SEO & Social Sharing (Divulgación) -->
+    <meta name="description"
+        content="RecoverAI Pro: La herramienta #1 para recuperar carritos abandonados por WhatsApp automáticamente.">
+    <meta name="keywords" content="whatsapp bot, recuperar ventas, shopify, woocommerce, ventas automaticas">
+
+    <!-- Open Graph / Facebook / WhatsApp Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://recoverai-pro-shop.surge.sh/checkout.html">
+    <meta property="og:title" content="RecoverAI Pro | Piloto Automático de Ventas">
+    <meta property="og:description"
+        content="Recupera el 70% de tus ventas perdidas con IA. Haz click para ver el demo.">
+    <meta property="og:image"
+        content="https://img.freepik.com/free-vector/futuristic-rocket-launch-concept_23-2148530635.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://recoverai-pro-shop.surge.sh/checkout.html">
+    <meta property="twitter:title" content="RecoverAI Pro | Piloto Automático">
+    <meta property="twitter:description" content="Automatiza tus ventas por WhatsApp hoy mismo.">
+    <meta property="twitter:image"
+        content="https://img.freepik.com/free-vector/futuristic-rocket-launch-concept_23-2148530635.jpg">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #4ade80 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-button {
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .step-card {
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: rgba(74, 222, 128, 0.5);
+            background: rgba(15, 23, 42, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Language Switcher -->
+    <div
+        class="fixed top-4 right-4 z-50 flex space-x-2 bg-slate-900/80 backdrop-blur p-1 rounded-lg border border-slate-700">
+        <button onclick="changeLanguage('es')"
+            class="px-2 py-1 text-xs font-bold text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-colors">ES</button>
+        <button onclick="changeLanguage('en')"
+            class="px-2 py-1 text-xs font-bold text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-colors">EN</button>
+        <button onclick="changeLanguage('pt')"
+            class="px-2 py-1 text-xs font-bold text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-colors">PT</button>
+    </div>
+
+    <!-- Hero Background Dots -->
+    <div
+        class="fixed inset-0 z-[-1] bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:40px_40px] opacity-20">
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 py-12 lg:py-24 text-center">
+        <!-- Logo/Badge -->
+        <div
+            class="inline-flex items-center px-4 py-2 rounded-full glass mb-8 text-green-400 text-sm font-semibold tracking-wide animate-bounce">
+            <span data-i18n="badge">🚀 100% Automatizado por IA</span>
+        </div>
+
+        <h1 class="text-5xl lg:text-7xl font-bold mb-6 tracking-tight">
+            <span data-i18n="title_1">No pierdas ni una </span>
+            <span class="gradient-text" data-i18n="title_2">venta más.</span>
+        </h1>
+
+        <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed" data-i18n="subtitle">
+            RecoverAI contacta a tus clientes vía WhatsApp apenas dejan un carrito abandonado. Paga una vez, configura
+            en 2 minutos y deja que el dinero entre solo.
+        </p>
+
+        <!-- DEMO CHAT SIMULATION -->
+        <div class="mb-20 relative px-4">
+            <div
+                class="max-w-md mx-auto bg-slate-900 rounded-[3rem] border-8 border-slate-800 overflow-hidden shadow-2xl relative">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-slate-800 rounded-b-xl z-20"></div>
+
+                <div class="bg-[#0b141a] h-[500px] flex flex-col font-sans relative">
+                    <div class="bg-[#202c33] p-4 flex items-center pt-8 shadow-md z-10">
+                        <div
+                            class="w-8 h-8 rounded-full bg-gradient-to-tr from-green-400 to-green-600 flex items-center justify-center text-xs font-bold mr-3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                                class="w-5 h-5 opacity-90">
+                        </div>
+                        <div>
+                            <h3 class="text-white text-sm font-semibold">RecoverAI Bot <span
+                                    class="bg-green-500/20 text-green-400 text-[10px] px-1 rounded ml-1">BUSINESS</span>
+                            </h3>
+                            <p class="text-slate-400 text-[10px]" data-i18n="chat_online">En línea</p>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 p-4 space-y-4 overflow-hidden relative">
+                        <div class="absolute inset-0 opacity-5"
+                            style="background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); background-size: 300px;">
+                        </div>
+
+                        <div class="flex flex-col space-y-1 max-w-[85%] relative z-10">
+                            <div
+                                class="bg-[#202c33] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-sm text-sm text-slate-200">
+                                <p data-i18n="msg_1">👋 Hola! Notamos que dejaste items en el carrito.</p>
+                                <p class="mt-2 text-xs opacity-70">12:30 PM</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex flex-col space-y-1 max-w-[85%] relative z-10 animate-in fade-in slide-in-from-left-4 duration-700 delay-300 fill-mode-both">
+                            <div
+                                class="bg-[#202c33] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-sm text-sm text-slate-200 border-l-4 border-green-500">
+                                <p data-i18n="msg_2">🛒 ¿Quieres retomarlo? Te guardamos el 5% de descuento.</p>
+                                <a href="#"
+                                    class="text-blue-400 underline block mt-1 text-xs break-all">shop.com/checkout...</a>
+                                <p class="mt-2 text-xs opacity-70">12:30 PM</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex flex-col space-y-1 max-w-[85%] ml-auto items-end relative z-10 animate-in fade-in slide-in-from-right-4 duration-700 delay-1000 fill-mode-both">
+                            <div
+                                class="bg-[#005c4b] p-3 rounded-tl-xl rounded-bl-xl rounded-br-xl shadow-sm text-sm text-white">
+                                <p data-i18n="msg_3">Uy sí, gracias! 👍</p>
+                                <div class="flex items-center justify-end mt-1 space-x-1">
+                                    <span class="text-[10px] opacity-70">12:35 PM</span>
+                                    <span class="text-blue-300 text-[10px]">✓✓</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex justify-center mt-6 animate-in zoom-in duration-500 delay-2000 fill-mode-both relative z-10">
+                            <div
+                                class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center">
+                                <span data-i18n="sale_rec">💰 Venta Recuperada: $120 USD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-8 text-sm text-slate-500 font-medium tracking-wide uppercase" data-i18n="demo_caption">Así se
+                ve en el celular de tu cliente</p>
+        </div>
+
+        <!-- Pricing Card -->
+        <div class="glass rounded-3xl p-8 lg:p-12 shadow-2xl relative overflow-hidden mb-16 max-w-lg mx-auto">
+            <div
+                class="absolute top-0 right-0 bg-green-500 text-black font-bold px-12 py-1 rotate-45 translate-x-10 translate-y-6 shadow-lg uppercase text-xs">
+                <span data-i18n="offer_badge">OFERTA ÚNICA</span>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-2">Plan Pro Ilimitado</h2>
+            <div class="flex items-center justify-center mb-8">
+                <span class="text-5xl font-bold">$29</span>
+                <span class="text-slate-500 ml-2" data-i18n="price_period">USD/mes</span>
+            </div>
+
+            <ul class="text-left space-y-4 mb-10 text-slate-300">
+                <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> <span
+                        data-i18n="feat_1">Mensajes Ilimitados</span></li>
+                <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> <span
+                        data-i18n="feat_2">Dashboard en Vivo</span></li>
+                <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> <span
+                        data-i18n="feat_3">Configuración en 2 min</span></li>
+                <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> <span
+                        data-i18n="feat_4">Soporte 24/7</span></li>
+            </ul>
+
+            <!-- Payment Options -->
+            <div class="mt-8">
+                <h3 class="text-white font-bold mb-4 flex items-center text-sm uppercase tracking-wide text-slate-500">
+                    <span data-i18n="select_payment">Selecciona Método de Pago</span>
+                </h3>
+
+                <!-- Tabs -->
+                <div class="flex space-x-2 mb-6">
+                    <button onclick="switchTab('card')" id="tab-card"
+                        class="flex-1 bg-green-600 text-black font-bold py-3 rounded-xl transition-all shadow-lg hover:shadow-green-500/30 ring-2 ring-green-500 text-sm">
+                        💳 PayPal / Card
+                    </button>
+                    <button onclick="switchTab('nequi')" id="tab-nequi"
+                        class="flex-1 bg-slate-800 text-gray-400 font-bold py-3 rounded-xl transition-all hover:bg-slate-700 text-sm">
+                        🟣 Cuenta Nu
+                    </button>
+                </div>
+
+                <!-- PayPal Section -->
+                <div id="section-card" class="animate-in fade-in slide-in-from-bottom-2">
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 space-y-4">
+                        <div class="flex items-center space-x-4 p-4 bg-black/40 rounded-lg border border-slate-600">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                                class="w-8 h-8 opacity-90 p-1 bg-white rounded">
+                            <div>
+                                <p class="text-xs text-gray-400" data-i18n="pay_to">Pagar a esta cuenta:</p>
+                                <p class="text-lg font-mono font-bold text-white tracking-wider truncate">
+                                    recoverairecoverai@gmail.com</p>
+                            </div>
+                            <button
+                                onclick="navigator.clipboard.writeText('recoverairecoverai@gmail.com'); alert('Copied!')"
+                                class="ml-auto text-blue-400 bg-blue-900/30 p-2 rounded hover:bg-blue-900/50">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700">
+                            <p class="text-xs text-center text-gray-400 mb-3" data-i18n="send_proof">Una vez pagues,
+                                envía el comprobante:</p>
+                            <a href="https://wa.me/573172922575?text=Hi,%20I%20sent%20the%20PayPal%20payment."
+                                target="_blank"
+                                class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl text-center transition-all shadow-lg hover:shadow-blue-500/30">
+                                📲 <span data-i18n="btn_proof">Enviar Comprobante</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NuBank Section -->
+                <div id="section-nequi" class="hidden animate-in fade-in slide-in-from-bottom-2">
+                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 space-y-4">
+                        <div class="flex items-center space-x-4 p-4 bg-black/40 rounded-lg border border-slate-600">
+                            <div
+                                class="w-12 h-12 bg-purple-600 rounded flex items-center justify-center text-white font-bold text-xs text-center leading-tight">
+                                Nu</div>
+                            <div>
+                                <p class="text-xs text-gray-400">Cuenta Nu</p>
+                                <p class="text-2xl font-mono font-bold text-white tracking-wider">44387836</p>
+                            </div>
+                            <button onclick="navigator.clipboard.writeText('44387836'); alert('Copied!')"
+                                class="ml-auto text-purple-400 bg-purple-900/30 p-2 rounded hover:bg-purple-900/50">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-slate-700">
+                            <p class="text-xs text-center text-gray-400 mb-3" data-i18n="send_proof">Una vez pagues,
+                                envía el comprobante:</p>
+                            <a href="https://wa.me/573172922575?text=Hola,%20ya%20hice%20el%20pago%20a%20tu%20Cuenta%20Nu."
+                                target="_blank"
+                                class="block w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-xl text-center transition-all shadow-lg hover:shadow-purple-500/30">
+                                📲 <span data-i18n="btn_proof">Enviar Comprobante</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How it works -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                <div class="glass p-6 rounded-2xl step-card">
+                    <div
+                        class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-500 font-bold mb-4">
+                        1</div>
+                    <h4 class="font-bold mb-2 text-white" data-i18n="step_1_title">Haz el pago</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed" data-i18n="step_1_desc">Procesa tu suscripción de
+                        forma segura con PayPal.</p>
+                </div>
+                <!-- ... other steps ... -->
+                <div class="glass p-6 rounded-2xl step-card">
+                    <div
+                        class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center text-blue-500 font-bold mb-4">
+                        2</div>
+                    <h4 class="font-bold mb-2 text-white" data-i18n="step_2_title">Obtén tu API Key</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed" data-i18n="step_2_desc">Recibe tu llave única al
+                        instante.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl step-card">
+                    <div
+                        class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-500 font-bold mb-4">
+                        3</div>
+                    <h4 class="font-bold mb-2 text-white" data-i18n="step_3_title">¡Factura!</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed" data-i18n="step_3_desc">Pégalo en tu tienda y mira
+                        cómo vuelven las ventas.</p>
+                </div>
+            </div>
+
+            <p class="mt-24 text-slate-600 text-sm">© 2026 RecoverAI Global. <span class="text-xs opacity-50">v2.1
+                    (Multi-lang)</span></p>
+        </div>
+
+        <script>
+            const translations = {
+                es: {
+                    badge: "🚀 100% Automatizado por IA",
+                    title_1: "No pierdas ni una ",
+                    title_2: "venta más.",
+                    subtitle: "RecoverAI contacta a tus clientes vía WhatsApp apenas dejan un carrito abandonado. Paga una vez, configura en 2 minutos y deja que el dinero entre solo.",
+                    chat_online: "En línea",
+                    msg_1: "👋 Hola! Notamos que dejaste items en el carrito.",
+                    msg_2: "🛒 ¿Quieres retomarlo? Te guardamos el 5% de descuento.",
+                    msg_3: "Uy sí, gracias! 👍",
+                    sale_rec: "💰 Venta Recuperada: $120 USD",
+                    demo_caption: "Así se ve en el celular de tu cliente",
+                    offer_badge: "OFERTA ÚNICA",
+                    price_period: "USD/mes",
+                    feat_1: "Mensajes Ilimitados",
+                    feat_2: "Dashboard en Vivo",
+                    feat_3: "Configuración en 2 min",
+                    feat_4: "Soporte 24/7",
+                    select_payment: "Selecciona Método de Pago",
+                    pay_to: "Pagar a esta cuenta:",
+                    send_proof: "Una vez pagues, envía el comprobante:",
+                    btn_proof: "Enviar Comprobante",
+                    step_1_title: "Haz el pago",
+                    step_1_desc: "Procesa tu suscripción de forma segura con PayPal.",
+                    step_2_title: "Obtén tu API Key",
+                    step_2_desc: "Recibe tu llave única al instante.",
+                    step_3_title: "¡Factura!",
+                    step_3_desc: "Pégalo en tu tienda y mira cómo vuelven las ventas."
+                },
+                en: {
+                    badge: "🚀 100% AI Automated",
+                    title_1: "Don't lose another ",
+                    title_2: "sale ever again.",
+                    subtitle: "RecoverAI contacts your customers via WhatsApp as soon as they abandon a cart. Pay once, setup in 2 mins, and let the money roll in.",
+                    chat_online: "Online",
+                    msg_1: "👋 Hi! We noticed you left items in your cart.",
+                    msg_2: "🛒 Wanna get them back? We saved a 5% discount for you.",
+                    msg_3: "Oh yes, thanks! 👍",
+                    sale_rec: "💰 Recovery Success: $120 USD",
+                    demo_caption: "Simulated Customer View",
+                    offer_badge: "LIMITED OFFER",
+                    price_period: "USD/mo",
+                    feat_1: "Unlimited Messages",
+                    feat_2: "Live Dashboard",
+                    feat_3: "2-Min Setup",
+                    feat_4: "24/7 Support",
+                    select_payment: "Select Payment Method",
+                    pay_to: "Pay to this account:",
+                    send_proof: "After paying, send proof here:",
+                    btn_proof: "Send Proof",
+                    step_1_title: "Make Payment",
+                    step_1_desc: "Securely process your subscription via PayPal.",
+                    step_2_title: "Get API Key",
+                    step_2_desc: "Receive your unique key instantly.",
+                    step_3_title: "Profit!",
+                    step_3_desc: "Paste it in your store and watch sales return."
+                },
+                pt: {
+                    badge: "🚀 100% Automatizado por IA",
+                    title_1: "Não perca mais ",
+                    title_2: "nenhuma venda.",
+                    subtitle: "RecoverAI contata seus clientes via WhatsApp assim que abandonam um carrinho. Pague uma vez, configure em 2 min e deixe o dinheiro entrar.",
+                    chat_online: "Online",
+                    msg_1: "👋 Olá! Notamos que você esqueceu itens no carrinho.",
+                    msg_2: "🛒 Quer recuperar? Guardamos 5% de desconto.",
+                    msg_3: "Ah sim, obrigado! 👍",
+                    sale_rec: "💰 Venda Recuperada: $120 USD",
+                    demo_caption: "Visão do Cliente",
+                    offer_badge: "OFERTA ÚNICA",
+                    price_period: "USD/mês",
+                    feat_1: "Mensagens Ilimitadas",
+                    feat_2: "Dashboard ao Vivo",
+                    feat_3: "Instalação em 2 min",
+                    feat_4: "Suporte 24/7",
+                    select_payment: "Selecione Pagamento",
+                    pay_to: "Pagar nesta conta:",
+                    send_proof: "Após pagar, envie o comprovante:",
+                    btn_proof: "Enviar Comprovante",
+                    step_1_title: "Faça o Pagamento",
+                    step_1_desc: "Processe sua assinatura via PayPal.",
+                    step_2_title: "Receba Chave API",
+                    step_2_desc: "Receba sua chave única instantaneamente.",
+                    step_3_title: "Lucre!",
+                    step_3_desc: "Cole na sua loja e veja as vendas voltarem."
+                }
+            };
+
+            function changeLanguage(lang) {
+                const elements = document.querySelectorAll('[data-i18n]');
+                elements.forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (translations[lang][key]) {
+                        el.innerText = translations[lang][key];
+                    }
+                });
+            }
+
+            // Auto-detect language
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('en')) changeLanguage('en');
+            else if (userLang.startsWith('pt')) changeLanguage('pt');
+            else changeLanguage('es');
+
+            function switchTab(tab) {
+                const cardBtn = document.getElementById('tab-card');
+                const nequiBtn = document.getElementById('tab-nequi');
+                const cardSec = document.getElementById('section-card');
+                const nequiSec = document.getElementById('section-nequi');
+
+                if (tab === 'card') {
+                    cardBtn.classList.add('bg-green-600', 'text-black', 'ring-2', 'ring-green-500');
+                    cardBtn.classList.remove('bg-slate-800', 'text-gray-400');
+                    nequiBtn.classList.remove('bg-green-600', 'text-black', 'ring-2');
+                    nequiBtn.classList.add('bg-slate-800', 'text-gray-400');
+
+                    cardSec.classList.remove('hidden');
+                    nequiSec.classList.add('hidden');
+                } else {
+                    nequiBtn.classList.add('bg-green-600', 'text-black', 'ring-2', 'ring-green-500');
+                    nequiBtn.classList.remove('bg-slate-800', 'text-gray-400');
+                    cardBtn.classList.remove('bg-green-600', 'text-black', 'ring-2');
+                    cardBtn.classList.add('bg-slate-800', 'text-gray-400');
+
+                    nequiSec.classList.remove('hidden');
+                    cardSec.classList.add('hidden');
+                }
+            }
+        </script>
+</body>
+
+</html>
