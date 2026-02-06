@@ -18,7 +18,18 @@ const Dashboard = () => {
     const [leads, setLeads] = useState<any[]>([]);
     const [newLeadName, setNewLeadName] = useState('');
     const [newLeadPhone, setNewLeadPhone] = useState('');
-    const [templates, setTemplates] = useState<any>(null);
+    const [templates, setTemplates] = useState<any>({
+        sales: {
+            es: ["Hola {{name}}, vi tu interés en nuestros productos. ¿Te puedo ayudar?"],
+            en: ["Hi {{name}}, saw you were interested. Can I help?"],
+            pt: ["Olá {{name}}, vi seu interesse. Posso ajudar?"]
+        },
+        recovery: {
+            es: "Hola {{name}}, notamos que dejaste compras pendientes. Retómalo aquí: {{link}}",
+            en: "Hi {{name}}, you left items behind. Resume here: {{link}}",
+            pt: "Olá {{name}}, você deixou itens para trás. Retome aqui: {{link}}"
+        }
+    });
     const [activeTab, setActiveTab] = useState<'home' | 'connections' | 'sales' | 'recovery' | 'settings'>('home');
     const [parsedTick, setParsedTick] = useState(0);
 
