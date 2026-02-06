@@ -284,11 +284,27 @@ const Dashboard = () => {
                                 )}
                             </div>
 
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 mb-4">
                                 {waStatus === 'connected'
                                     ? 'Tu asistente está activo y funcionando. La imagen de perfil se actualizó automáticamente.'
                                     : 'Abre WhatsApp en tu celular > Dispositivos Vinculados > Vincular Dispositivo'}
                             </p>
+
+                            {waStatus !== 'connected' && (
+                                <button
+                                    onClick={async () => {
+                                        if (!confirm('¿Reiniciar Bot para generar nuevo QR?')) return;
+                                        try {
+                                            await fetch(`${API_BASE}/restart-bot`, { method: 'POST' });
+                                            alert('Reiniciando... Espera 20 segundos.');
+                                            window.location.reload();
+                                        } catch (e) { alert('Error al reiniciar'); }
+                                    }}
+                                    className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded text-xs font-bold border border-gray-600"
+                                >
+                                    🔄 Regenerar QR (Si no carga)
+                                </button>
+                            )}
                         </div>
                     </div>
                 )}

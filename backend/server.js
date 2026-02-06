@@ -232,6 +232,19 @@ app.post('/api/growth/toggle', (req, res) => {
     res.json({ success: true, active });
 });
 
+// Restart Bot Endpoint
+app.post('/api/restart-bot', async (req, res) => {
+    try {
+        await client.destroy();
+        await client.initialize();
+        global.latestQr = null; // Clear old QR
+        waStatus = 'disconnected';
+        res.json({ success: true });
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
 app.post('/api/growth/test-me', async (req, res) => {
     if (waStatus !== 'connected') return res.status(503).json({ error: 'WhatsApp no conectado' });
     try {
