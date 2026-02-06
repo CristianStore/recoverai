@@ -172,6 +172,25 @@ app.get('/api/qr-image', async (req, res) => {
     }
 });
 
+// New Endpoint for Pairing Code
+app.post('/api/pair-channel', async (req, res) => {
+    const { phone } = req.body;
+    if (!phone) return res.status(400).json({ error: 'Phone number required' });
+
+    try {
+        // Ensure client is in a state to accept pairing
+        if (waStatus === 'connected') {
+            return res.status(400).json({ error: 'Already connected' });
+        }
+
+        const code = await client.requestPairingCode(phone);
+        res.json({ success: true, code });
+    } catch (e) {
+        console.error('Pairing Code Error:', e);
+        res.status(500).json({ error: e.message });
+    }
+});
+
 client.on('ready', () => {
     console.log('✅ WhatsApp Client is READY!');
     waStatus = 'connected';
