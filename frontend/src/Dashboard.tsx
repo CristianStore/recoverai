@@ -408,135 +408,135 @@ const Dashboard = () => {
                             </div>
                     </div>
                 )}
-                activeTab === 'sales' && (
-                <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        <div className="lg:col-span-2">
-                            <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-6">
-                                <div className="flex items-center justify-between mb-4">
-                                    <h3 className="text-xl font-bold flex items-center"><Target className="mr-2 text-purple-500" /> Motor de Crecimiento (Ventas)</h3>
-                                    <button
-                                        onClick={toggleGrowth}
-                                        className={`px-4 py-2 rounded-lg font-bold transition-all ${isGrowthActive ? 'bg-green-500 text-black' : 'bg-gray-700 text-white'
-                                            }`}
-                                    >
-                                        {isGrowthActive ? 'ACTIVO' : 'INACTIVO'}
-                                    </button>
-                                </div>
-                                <p className="text-gray-400 text-sm">Este bot busca clientes potenciales automáticamente usando tu número conectado.</p>
-                            </div>
-
-                            <div className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
-                                <div className="p-6 border-b border-gray-800 flex items-center justify-between">
-                                    <h3 className="font-bold">Lista de Prospectos</h3>
-                                    <button onClick={resetLeads} className="text-xs bg-gray-800 px-3 py-1 rounded hover:bg-gray-700">Resetear Lista</button>
-                                </div>
-                                <div className="p-4 border-b border-gray-800 bg-black/20">
-                                    <form onSubmit={handleAddLead} className="flex gap-2">
-                                        <input
-                                            type="text"
-                                            placeholder="Nombre Cliente"
-                                            value={newLeadName}
-                                            onChange={e => setNewLeadName(e.target.value)}
-                                            className="flex-1 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-green-500 outline-none"
-                                        />
-                                        <input
-                                            type="text"
-                                            placeholder="Teléfono (ej: 573...)"
-                                            value={newLeadPhone}
-                                            onChange={e => setNewLeadPhone(e.target.value)}
-                                            className="flex-1 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-green-500 outline-none"
-                                        />
-                                        <button type="submit" className="bg-green-600 hover:bg-green-500 text-white px-4 rounded font-bold text-sm">
-                                            + Agregar
+                {activeTab === 'sales' && (
+                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            <div className="lg:col-span-2">
+                                <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 mb-6">
+                                    <div className="flex items-center justify-between mb-4">
+                                        <h3 className="text-xl font-bold flex items-center"><Target className="mr-2 text-purple-500" /> Motor de Crecimiento (Ventas)</h3>
+                                        <button
+                                            onClick={toggleGrowth}
+                                            className={`px-4 py-2 rounded-lg font-bold transition-all ${isGrowthActive ? 'bg-green-500 text-black' : 'bg-gray-700 text-white'
+                                                }`}
+                                        >
+                                            {isGrowthActive ? 'ACTIVO' : 'INACTIVO'}
                                         </button>
-                                    </form>
-                                    <table className="w-full text-left text-sm">
-                                        <thead className="bg-black/20 text-gray-500 uppercase text-xs">
-                                            <tr>
-                                                <th className="px-6 py-3">Nombre</th>
-                                                <th className="px-6 py-3">Teléfono</th>
-                                                <th className="px-6 py-3">Estado</th>
-                                                <th className="px-6 py-3">Acción</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody className="divide-y divide-gray-800">
-                                            {leads.map((lead, i) => (
-                                                <tr key={i} className="hover:bg-white/5">
-                                                    <td className="px-6 py-3 font-medium">{lead.name}</td>
-                                                    <td className="px-6 py-3 text-gray-400">{lead.phone}</td>
-                                                    <td className="px-6 py-3">
-                                                        <span className={`px-2 py-1 rounded text-[10px] font-bold ${lead.status === 'pending' ? 'bg-yellow-500/20 text-yellow-500' :
-                                                            lead.status === 'contacted' ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'
-                                                            }`}>{lead.status}</span>
-                                                    </td>
-                                                    <td className="px-6 py-3">
-                                                        <button
-                                                            onClick={() => deleteLead(lead.phone)}
-                                                            className="text-red-400 hover:text-red-300 hover:bg-red-900/20 p-2 rounded transition-colors"
-                                                            title="Eliminar"
-                                                        >
-                                                            <Trash2 size={16} />
-                                                        </button>
-                                                    </td>
+                                    </div>
+                                    <p className="text-gray-400 text-sm">Este bot busca clientes potenciales automáticamente usando tu número conectado.</p>
+                                </div>
+
+                                <div className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden">
+                                    <div className="p-6 border-b border-gray-800 flex items-center justify-between">
+                                        <h3 className="font-bold">Lista de Prospectos</h3>
+                                        <button onClick={resetLeads} className="text-xs bg-gray-800 px-3 py-1 rounded hover:bg-gray-700">Resetear Lista</button>
+                                    </div>
+                                    <div className="p-4 border-b border-gray-800 bg-black/20">
+                                        <form onSubmit={handleAddLead} className="flex gap-2">
+                                            <input
+                                                type="text"
+                                                placeholder="Nombre Cliente"
+                                                value={newLeadName}
+                                                onChange={e => setNewLeadName(e.target.value)}
+                                                className="flex-1 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-green-500 outline-none"
+                                            />
+                                            <input
+                                                type="text"
+                                                placeholder="Teléfono (ej: 573...)"
+                                                value={newLeadPhone}
+                                                onChange={e => setNewLeadPhone(e.target.value)}
+                                                className="flex-1 bg-gray-800 border border-gray-700 rounded px-3 py-2 text-sm text-white focus:border-green-500 outline-none"
+                                            />
+                                            <button type="submit" className="bg-green-600 hover:bg-green-500 text-white px-4 rounded font-bold text-sm">
+                                                + Agregar
+                                            </button>
+                                        </form>
+                                        <table className="w-full text-left text-sm">
+                                            <thead className="bg-black/20 text-gray-500 uppercase text-xs">
+                                                <tr>
+                                                    <th className="px-6 py-3">Nombre</th>
+                                                    <th className="px-6 py-3">Teléfono</th>
+                                                    <th className="px-6 py-3">Estado</th>
+                                                    <th className="px-6 py-3">Acción</th>
                                                 </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
+                                            </thead>
+                                            <tbody className="divide-y divide-gray-800">
+                                                {leads.map((lead, i) => (
+                                                    <tr key={i} className="hover:bg-white/5">
+                                                        <td className="px-6 py-3 font-medium">{lead.name}</td>
+                                                        <td className="px-6 py-3 text-gray-400">{lead.phone}</td>
+                                                        <td className="px-6 py-3">
+                                                            <span className={`px-2 py-1 rounded text-[10px] font-bold ${lead.status === 'pending' ? 'bg-yellow-500/20 text-yellow-500' :
+                                                                lead.status === 'contacted' ? 'bg-green-500/20 text-green-500' : 'bg-red-500/20 text-red-500'
+                                                                }`}>{lead.status}</span>
+                                                        </td>
+                                                        <td className="px-6 py-3">
+                                                            <button
+                                                                onClick={() => deleteLead(lead.phone)}
+                                                                className="text-red-400 hover:text-red-300 hover:bg-red-900/20 p-2 rounded transition-colors"
+                                                                title="Eliminar"
+                                                            >
+                                                                <Trash2 size={16} />
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="space-y-6">
-                            <div className={`border border-gray-800 rounded-xl p-6 transition-all ${isGrowthActive ? 'bg-green-900/10 border-green-500/50' : 'bg-gray-900'}`}>
-                                <h3 className="font-bold mb-2">⚡ Auto-Piloto (Buscador IA / AI Search)</h3>
-                                <p className="text-xs text-gray-500 mb-4">
-                                    The system will search for customers worldwide (Google/Bing) and contact them automatically. <br />
-                                    <span className="opacity-70">El sistema buscará clientes en todo el mundo y los contactará automáticamente.</span>
-                                </p>
+                            <div className="space-y-6">
+                                <div className={`border border-gray-800 rounded-xl p-6 transition-all ${isGrowthActive ? 'bg-green-900/10 border-green-500/50' : 'bg-gray-900'}`}>
+                                    <h3 className="font-bold mb-2">⚡ Auto-Piloto (Buscador IA / AI Search)</h3>
+                                    <p className="text-xs text-gray-500 mb-4">
+                                        The system will search for customers worldwide (Google/Bing) and contact them automatically. <br />
+                                        <span className="opacity-70">El sistema buscará clientes en todo el mundo y los contactará automáticamente.</span>
+                                    </p>
 
-                                <div className="flex items-center justify-between bg-black/40 p-3 rounded-lg border border-gray-700">
-                                    <div className="flex items-center">
-                                        <div className={`w-3 h-3 rounded-full mr-2 ${isGrowthActive ? 'bg-green-500 animate-pulse' : 'bg-gray-500'}`}></div>
-                                        <span className="text-sm font-medium text-gray-300">
-                                            {isGrowthActive ? 'Searching / Buscando...' : 'Idle / En Reposo'}
-                                        </span>
+                                    <div className="flex items-center justify-between bg-black/40 p-3 rounded-lg border border-gray-700">
+                                        <div className="flex items-center">
+                                            <div className={`w-3 h-3 rounded-full mr-2 ${isGrowthActive ? 'bg-green-500 animate-pulse' : 'bg-gray-500'}`}></div>
+                                            <span className="text-sm font-medium text-gray-300">
+                                                {isGrowthActive ? 'Searching / Buscando...' : 'Idle / En Reposo'}
+                                            </span>
+                                        </div>
+                                        <button
+                                            onClick={toggleGrowth}
+                                            className={`px-4 py-2 rounded-lg font-bold text-xs transition-all ${isGrowthActive
+                                                ? 'bg-red-500/20 text-red-400 hover:bg-red-500/30'
+                                                : 'bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-900/20'
+                                                }`}
+                                        >
+                                            {isGrowthActive ? 'STOP / DETENER' : 'START AUTO-PILOT'}
+                                        </button>
                                     </div>
+                                    {isGrowthActive && (
+                                        <div className="mt-3 text-[10px] text-green-400 font-mono">
+                                            {'>'} Scanning Global Market: "boutiques..."
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
+                                    <h3 className="font-bold mb-4">Prueba Rápida / Quick Test</h3>
                                     <button
-                                        onClick={toggleGrowth}
-                                        className={`px-4 py-2 rounded-lg font-bold text-xs transition-all ${isGrowthActive
-                                            ? 'bg-red-500/20 text-red-400 hover:bg-red-500/30'
-                                            : 'bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-900/20'
-                                            }`}
+                                        onClick={async () => {
+                                            try { await fetch(`${API_BASE}/growth/test-me`, { method: 'POST' }); alert('✅ Enviado'); }
+                                            catch { alert('Error'); }
+                                        }}
+                                        className="w-full py-3 bg-purple-600 hover:bg-purple-500 rounded-lg font-bold mb-3"
                                     >
-                                        {isGrowthActive ? 'STOP / DETENER' : 'START AUTO-PILOT'}
+                                        Probar conmigo (Dueño)
                                     </button>
+                                    <div className="text-xs text-gray-500 text-center">Envía un pitch de venta a tu número personal.</div>
                                 </div>
-                                {isGrowthActive && (
-                                    <div className="mt-3 text-[10px] text-green-400 font-mono">
-                                        {'>'} Scanning Global Market: "boutiques..."
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
-                                <h3 className="font-bold mb-4">Prueba Rápida / Quick Test</h3>
-                                <button
-                                    onClick={async () => {
-                                        try { await fetch(`${API_BASE}/growth/test-me`, { method: 'POST' }); alert('✅ Enviado'); }
-                                        catch { alert('Error'); }
-                                    }}
-                                    className="w-full py-3 bg-purple-600 hover:bg-purple-500 rounded-lg font-bold mb-3"
-                                >
-                                    Probar conmigo (Dueño)
-                                </button>
-                                <div className="text-xs text-gray-500 text-center">Envía un pitch de venta a tu número personal.</div>
                             </div>
                         </div>
                     </div>
-                </div>
                 )
-}
+                }
 
                 {
                     activeTab === 'recovery' && (

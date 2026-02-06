@@ -196,9 +196,9 @@ client.on('ready', () => {
     waStatus = 'connected';
     applyBranding();
 
-    // --- AUTO-PILOT ZERO TOUCH ---
-    console.log('🚀 SYSTEM: Iniciando Modo Piloto Automático (Global Growth)...');
-    growthAgent.startOutreach();
+    // --- AUTO-PILOT ZERO TOUCH (DISABLED DEFAULT FOR MEMORY SAVING) ---
+    // console.log('🚀 SYSTEM: Iniciando Modo Piloto Automático (Global Growth)...');
+    // growthAgent.startOutreach();
 });
 
 client.on('authenticated', () => console.log('🔐 Client Authenticated'));
