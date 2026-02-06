@@ -24,7 +24,6 @@ function getTemplates() {
     try {
         return JSON.parse(fs.readFileSync(TEMPLATES_FILE, 'utf8'));
     } catch (e) {
-    } catch (e) {
         return {
             sales: {
                 es: ["Hola {{name}}, vi tu interés en nuestros productos. ¿Te puedo ayudar?"],
