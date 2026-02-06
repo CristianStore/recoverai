@@ -325,14 +325,12 @@ const Dashboard = () => {
                         <h2 className="text-3xl font-bold mb-8">Conectar Asistente</h2>
 
                         <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col items-center text-center max-w-md w-full shadow-2xl">
-                            <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 ${waStatus === 'connected' ? 'bg-green-500/20 text-green-500' : 'bg-gray-800 text-gray-500'
-                                }`}>
+                            <div className={`w-20 h-20 rounded-full flex items-center justify-center mb-6 ${waStatus === 'connected' ? 'bg-green-500/20 text-green-500' : 'bg-gray-800 text-gray-500'}`}>
                                 <Smartphone size={40} />
                             </div>
 
                             <h3 className="text-2xl font-bold text-white mb-2">WhatsApp Web</h3>
-                            <p className={`text-sm font-medium mb-6 uppercase tracking-wider ${waStatus === 'connected' ? 'text-green-400' : 'text-yellow-500'
-                                }`}>
+                            <p className={`text-sm font-medium mb-6 uppercase tracking-wider ${waStatus === 'connected' ? 'text-green-400' : 'text-yellow-500'}`}>
                                 {waStatus === 'connected' ? '● Conectado y Listo' : '● Esperando Escaneo'}
                             </p>
 
