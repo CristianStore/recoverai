@@ -21,8 +21,8 @@ const Dashboard = () => {
     const [templates, setTemplates] = useState<any>(null);
     const [activeTab, setActiveTab] = useState<'home' | 'connections' | 'sales' | 'recovery' | 'settings'>('home');
 
-    // Dynamic API URL for mobile/network support
-    const API_BASE = `http://${window.location.hostname}:3000/api`;
+    // URL del Backend (Cerebro) en Render
+    const API_BASE = 'https://recoverai-bot.onrender.com/api';
 
     // Fetch stats and status from backend
     useEffect(() => {
