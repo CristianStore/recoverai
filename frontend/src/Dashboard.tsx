@@ -166,6 +166,41 @@ const Dashboard = () => {
         } catch (e) { alert('Error al guardar'); }
     };
 
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [passwordInput, setPasswordInput] = useState('');
+
+    if (!isAuthenticated) {
+        return (
+            <div className="min-h-screen bg-black flex items-center justify-center p-4">
+                <div className="bg-gray-900 border border-gray-800 p-8 rounded-2xl shadow-2xl max-w-sm w-full">
+                    <div className="flex justify-center mb-6">
+                        <Zap className="text-green-500" size={48} />
+                    </div>
+                    <h2 className="text-2xl font-bold text-white text-center mb-6">RecoverAI Admin</h2>
+                    <form onSubmit={(e) => {
+                        e.preventDefault();
+                        if (passwordInput === 'Pr5refux') {
+                            setIsAuthenticated(true);
+                        } else {
+                            alert('Contraseña Incorrecta');
+                        }
+                    }}>
+                        <input
+                            type="password"
+                            placeholder="Contraseña Maestro"
+                            value={passwordInput}
+                            onChange={(e) => setPasswordInput(e.target.value)}
+                            className="w-full bg-black border border-gray-700 rounded-lg px-4 py-3 text-white mb-4 focus:border-green-500 outline-none"
+                        />
+                        <button type="submit" className="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-lg transition-colors">
+                            Entrar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-green-500 selection:text-black">
             {/* Navbar */}

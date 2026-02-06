@@ -1,0 +1,31 @@
+=========================================
+📂 RECOVERAI GLOBAL - ENLACES IMPORTANTES
+=========================================
+
+1. 🛍️ TIENDA OFICIAL (Para tus Clientes)
+   >> https://recoverai-six.vercel.app/checkout.html
+   (Comparte este enlace para vender el software)
+
+2. 🎛️ PANEL DE CONTROL (Tu Dashboard)
+   >> https://recoverai-six.vercel.app/
+   (Estadísticas, Conexión WhatsApp, Configuración de Mensajes)
+
+--------------- ZONA TÉCNICA ---------------
+
+3. 🧠 ESTADO DEL ROBOT (Prueba de Vida)
+   >> https://recoverai-bot.onrender.com/api/status
+   (Si ves un texto tipo {"sales":...} significa que el bot está vivo.
+    NOTA: Si entras solo a .com verás la tienda, es normal).
+
+4. 🔧 REINICIAR / GESTIONAR SERVIDOR
+   >> https://dashboard.render.com/
+   (Entra aquí si alguna vez necesitas apagar/prender el servidor manualmente).
+
+5. ⏱️ MONITOR (Anti-Dormir)
+   >> https://uptimerobot.com/dashboard
+   (Para verificar que el monitor sigue activo).
+
+=========================================
+⚠️ RECOMENDACIÓN:
+Guarda este archivo en tu escritorio.
+=========================================
