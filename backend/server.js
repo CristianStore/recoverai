@@ -365,6 +365,7 @@ app.post('/api/test-recovery-custom', async (req, res) => {
         const templates = getTemplates();
         const lang = detectLanguage(phone);
         const templateText = templates.recovery[lang] || templates.recovery['en'];
+        const name = req.body.name || ''; // Fix: Define name
 
         const msg = templateText
             .replace('{{name}}', name || (lang === 'es' ? 'Cliente de Prueba' : 'Test Client'))
