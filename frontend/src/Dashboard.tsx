@@ -167,7 +167,7 @@ const Dashboard = () => {
                                 RecoverAI <span className="text-xs font-mono text-gray-500 border border-gray-700 rounded px-1 ml-1 align-top">PRO</span>
                             </span>
                         </div>
-                        <div className="flex space-x-1 bg-gray-900/80 p-1 rounded-lg border border-gray-800">
+                        <div className="flex space-x-1 bg-gray-900/80 p-1 rounded-lg border border-gray-800 overflow-x-auto custom-scrollbar">
                             {[
                                 { id: 'home', icon: BarChart3, label: 'Inicio' },
                                 { id: 'connections', icon: Smartphone, label: 'Conexión' },
