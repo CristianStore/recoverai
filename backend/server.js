@@ -183,6 +183,11 @@ app.post('/api/pair-channel', async (req, res) => {
             return res.status(400).json({ error: 'Already connected' });
         }
 
+        // Fix: Ensure QR logic (and thus WWeb injection) is ready
+        if (!global.latestQr) {
+            return res.status(503).json({ error: 'System warming up. Wait 10s and try again.' });
+        }
+
         const code = await client.requestPairingCode(phone);
         res.json({ success: true, code });
     } catch (e) {
