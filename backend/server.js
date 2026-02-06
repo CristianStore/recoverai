@@ -400,8 +400,12 @@ app.post('/api/restart-bot', async (req, res) => {
         await client.destroy();
     } catch (e) { }
 
-    client.initialize();
+    global.latestQr = null; // Fix: Clear old QR
     waStatus = 'disconnected';
+
+    // Defer initialization to avoid race conditions
+    setTimeout(() => client.initialize(), 1000);
+
     res.json({ success: true });
 });
 
