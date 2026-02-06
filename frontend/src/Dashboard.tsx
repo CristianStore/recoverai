@@ -406,6 +406,7 @@ const Dashboard = () => {
                                     </div>
                                 )}
                             </div>
+                        )}
                     </div>
                 )}
                 {activeTab === 'sales' && (
