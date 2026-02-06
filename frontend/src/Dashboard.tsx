@@ -20,6 +20,7 @@ const Dashboard = () => {
     const [newLeadPhone, setNewLeadPhone] = useState('');
     const [templates, setTemplates] = useState<any>(null);
     const [activeTab, setActiveTab] = useState<'home' | 'connections' | 'sales' | 'recovery' | 'settings'>('home');
+    const [parsedTick, setParsedTick] = useState(0);
 
     // URL del Backend (Cerebro) en Render
     const API_BASE = 'https://recoverai-bot.onrender.com/api';
@@ -57,7 +58,11 @@ const Dashboard = () => {
         };
 
         fetchData();
-        const interval = setInterval(fetchData, 3000); // Poll every 3 seconds
+        fetchData();
+        const interval = setInterval(() => {
+            fetchData();
+            setParsedTick(prev => prev + 1);
+        }, 3000); // Poll every 3 seconds
         return () => clearInterval(interval);
     }, []);
 
@@ -264,13 +269,16 @@ const Dashboard = () => {
                                     <CheckCircle2 size={80} className="text-green-500" />
                                 ) : (
                                     <img
-                                        src={`${API_BASE}/qr-image?t=${Date.now()}`}
+                                        src={`${API_BASE}/qr-image?t=${parsedTick}`}
                                         alt="QR Code"
                                         className="w-full h-full object-contain"
+                                        style={{ imageRendering: 'pixelated' }}
                                         onError={(e) => {
-                                            // Fallback text if QR not ready yet
-                                            e.currentTarget.style.display = 'none';
-                                            e.currentTarget.parentNode.textContent = 'Cargando QR...';
+                                            const parent = e.currentTarget.parentElement;
+                                            if (parent) {
+                                                e.currentTarget.style.display = 'none';
+                                                parent.textContent = 'Cargando nuevo QR...';
+                                            }
                                         }}
                                     />
                                 )}
