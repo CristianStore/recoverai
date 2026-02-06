@@ -395,6 +395,16 @@ app.post('/api/templates', (req, res) => {
     res.json({ success: true });
 });
 
+app.post('/api/restart-bot', async (req, res) => {
+    try {
+        await client.destroy();
+    } catch (e) { }
+
+    client.initialize();
+    waStatus = 'disconnected';
+    res.json({ success: true });
+});
+
 app.post('/api/reset-stats', (req, res) => {
     Object.keys(data.shops).forEach(key => {
         data.shops[key].earnings = 0;
