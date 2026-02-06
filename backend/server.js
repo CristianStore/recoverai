@@ -135,36 +135,30 @@ const applyBranding = async () => {
     }, 5000);
 };
 
-client.on('qr', (qr) => {
-    console.log('--- QR CODE EVENT RECEIVED ---');
-    console.log('QR String Length:', qr.length);
+console.log('--- QR CODE EVENT RECEIVED ---');
+console.log('QR String Length:', qr.length);
 
-    qrcode.generate(qr, { small: true });
-    waStatus = 'scanned_needed';
+qrcode.generate(qr, { small: true });
+waStatus = 'scanned_needed';
 
-    // Save QR
-    const qrPath = path.join(__dirname, '..', 'frontend', 'public', 'qr.png');
-    console.log('Attempting to save QR code to:', qrPath);
+// Store QR globally for API access
+global.latestQr = qr;
+});
+
+// Add QR Image Endpoint
+app.get('/api/qr-image', async (req, res) => {
+    if (!global.latestQr) return res.status(404).send('QR Not Ready');
 
     try {
-        // Ensure directory exists
-        const dir = path.dirname(qrPath);
-        if (!fs.existsSync(dir)) {
-            console.log('Directory does not exist, creating:', dir);
-            fs.mkdirSync(dir, { recursive: true });
-        }
-
-        qrcodeFile.toFile(qrPath, qr, {
-            color: { dark: '#22c55e', light: '#00000000' }
-        }, (err) => {
-            if (err) {
-                console.error('❌ CRITICAL ERROR saving QR file:', err);
-            } else {
-                console.log('✅ QR Image saved successfully to:', qrPath);
-            }
+        const url = await qrcodeFile.toDataURL(global.latestQr);
+        const img = Buffer.from(url.split(',')[1], 'base64');
+        res.writeHead(200, {
+            'Content-Type': 'image/png',
+            'Content-Length': img.length
         });
+        res.end(img);
     } catch (e) {
-        console.error('❌ EXCEPTION during QR save:', e);
+        res.status(500).send('Error generating QR');
     }
 });
 

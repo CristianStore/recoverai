@@ -264,12 +264,13 @@ const Dashboard = () => {
                                     <CheckCircle2 size={80} className="text-green-500" />
                                 ) : (
                                     <img
-                                        src={`/qr.png?t=${Date.now()}`}
+                                        src={`${API_BASE}/qr-image?t=${Date.now()}`}
                                         alt="QR Code"
                                         className="w-full h-full object-contain"
                                         onError={(e) => {
-                                            e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg";
-                                            e.currentTarget.className += " opacity-20 blur-sm";
+                                            // Fallback text if QR not ready yet
+                                            e.currentTarget.style.display = 'none';
+                                            e.currentTarget.parentNode.textContent = 'Cargando QR...';
                                         }}
                                     />
                                 )}
