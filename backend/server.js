@@ -120,8 +120,13 @@ const client = new Client({
             '--no-first-run',
             '--no-zygote',
             '--single-process',
+            '--single-process',
             '--disable-gpu'
         ],
+    },
+    webVersionCache: {
+        type: 'remote',
+        remotePath: 'https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html',
     }
 });
 
@@ -427,6 +432,17 @@ app.post('/api/restart-bot', async (req, res) => {
 
     global.latestQr = null; // Fix: Clear old QR
     waStatus = 'disconnected';
+
+    // Hard Reset: Delete auth folder to cure "not a function" errors
+    const authPath = path.join(__dirname, '.wwebjs_auth');
+    if (fs.existsSync(authPath)) {
+        try {
+            fs.rmSync(authPath, { recursive: true, force: true });
+            console.log('🧹 Cache de sesión eliminado para corrección de errores.');
+        } catch (err) {
+            console.error('Error limpiando caché:', err);
+        }
+    }
 
     // Defer initialization to avoid race conditions
     setTimeout(() => client.initialize(), 1000);
