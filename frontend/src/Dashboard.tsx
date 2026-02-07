@@ -310,7 +310,9 @@ const Dashboard = () => {
                                         <div className={`mt-1 h-2 w-2 rounded-full shrink-0 ${event.type === 'success' ? 'bg-green-500' : event.type === 'error' ? 'bg-red-500' : 'bg-blue-500'
                                             }`} />
                                         <div className="flex-1 min-w-0">
-                                            <p className="text-xs text-white opacity-80">{event.description}</p>
+                                            <p className="text-xs text-white opacity-80">
+                                                {typeof event.description === 'object' ? JSON.stringify(event.description) : event.description}
+                                            </p>
                                             <p className="text-[10px] text-gray-500 mt-1">{new Date(event.timestamp).toLocaleTimeString()}</p>
                                         </div>
                                     </div>
@@ -398,7 +400,7 @@ const Dashboard = () => {
                                     <div className="animate-in zoom-in duration-300">
                                         <p className="text-gray-400 text-sm mb-2">Ingresa este código en tu celular:</p>
                                         <div className="text-4xl font-mono font-bold text-yellow-400 bg-black/50 p-4 rounded-xl border border-yellow-500/30 tracking-widest">
-                                            {pairingCode}
+                                            {String(pairingCode)}
                                         </div>
                                         <button onClick={() => setPairingCode('')} className="text-xs text-gray-500 mt-4 underline">Intentar con otro número</button>
                                     </div>
