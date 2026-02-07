@@ -445,10 +445,10 @@ app.post('/api/restart-bot', async (req, res) => {
     }
 
     // Defer initialization to avoid race conditions
-    setTimeout(() => client.initialize(), 1000);
-
-    res.json({ success: true });
-});
+    console.error('Error enviando reporte diario:', e);
+}
+    }
+}, 60000); // Check every minute
 
 app.post('/api/reset-stats', (req, res) => {
     Object.keys(data.shops).forEach(key => {
