@@ -4,6 +4,12 @@ import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
     const navigate = useNavigate();
+    const whatsappNumber = '573172922575'; // Owner's Number
+
+    const openWhatsApp = (msg: string) => {
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank');
+    };
 
     return (
         <div className="min-h-screen bg-black text-white font-sans selection:bg-green-500 selection:text-black overflow-hidden">
@@ -46,9 +52,12 @@ const LandingPage = () => {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button className="w-full sm:w-auto px-8 py-4 bg-green-600 hover:bg-green-500 text-black font-bold rounded-full text-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2 shadow-lg shadow-green-900/50">
-                            Empezar Prueba Gratis
-                            <ChevronRight size={20} />
+                        <button
+                            onClick={() => openWhatsApp("Hola! 👋 Quiero activar mi prueba gratis de RecoverAI.")}
+                            className="group relative w-full sm:w-auto px-8 py-4 bg-green-500 hover:bg-green-400 text-black font-bold rounded-full text-lg transition-all transform hover:scale-105 shadow-[0_0_40px_-10px_rgba(34,197,94,0.6)] flex items-center justify-center gap-2 overflow-hidden"
+                        >
+                            <span className="relative z-10 flex items-center gap-2">EMPEZAR GRATIS <ChevronRight size={20} /></span>
+                            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 transform skew-y-12" />
                         </button>
                         <button onClick={() => navigate('/dashboard')} className="w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-medium rounded-full text-lg transition-all border border-white/10">
                             Ver Demo en Vivo

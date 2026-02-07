@@ -445,8 +445,51 @@ app.post('/api/restart-bot', async (req, res) => {
     }
 
     // Defer initialization to avoid race conditions
-    console.error('Error enviando reporte diario:', e);
-}
+    setTimeout(() => client.initialize(), 1000);
+
+    res.json({ success: true });
+});
+
+// --- DAILY REPORT SYSTEM (COMPENSATION FEATURE) ---
+let lastReportDate = null;
+
+setInterval(async () => {
+    if (waStatus !== 'connected') return;
+
+    const now = new Date();
+    // Adjust to Colombian Time (UTC-5) roughly or just use Server Time
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+    const todayStr = now.toDateString();
+
+    // Send at 9:00 PM (21:00)
+    if (hour === 21 && minute === 0 && lastReportDate !== todayStr) {
+        lastReportDate = todayStr;
+        console.log('📊 Generando Reporte Diario Automático...');
+
+        try {
+            const shopKey = Object.keys(data.shops)[0];
+            const shop = data.shops[shopKey];
+            const dateDisplay = now.toLocaleDateString('es-CO', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+
+            const reportMsg = `📊 *REPORTE DIARIO - RECOVER AI*
+📅 ${dateDisplay}
+
+💰 *Ventas Identificadas:* $${shop.earnings.toLocaleString()}
+🛒 *Carritos Detectados:* ${shop.cartsDetected}
+📨 *Mensajes Enviados:* ${shop.messagesSent}
+
+_El sistema sigue buscando clientes mientras duermes. 🌙_`;
+
+            // Send to the bot's own number (Saved Messages) so the owner sees it
+            const targetPhone = '573172922575@c.us'; // Owner's specific number
+            await client.sendMessage(targetPhone, reportMsg);
+            console.log('✅ Reporte Diario enviado a:', targetPhone);
+
+            logEvent(shopKey, 'info', 'Reporte Diario Automático Enviado');
+        } catch (e) {
+            console.error('Error enviando reporte diario:', e);
+        }
     }
 }, 60000); // Check every minute
 
